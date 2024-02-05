@@ -22,12 +22,6 @@ jobs:
             import os
             paths="${{ steps.validat_test_file_exist.outputs.TEST_REPORTS }}"
             files=paths.strip().split(' ')
-            result = ""
-            for path in files:
-                print(path)
-                print(os.path.exists(path))
-                with open(path) as fp:
-                  module=path.split('/')[0].title() + " Module: "
-                  result+=module
-                  print(f'::set-output name=test_report::{result}')
-    shell: python
+            result = "test"
+            print(f'::set-output name=test_report::{result}')
+        shell: python
