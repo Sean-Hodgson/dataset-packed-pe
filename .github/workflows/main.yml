@@ -18,7 +18,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       # You can test your matrix by printing the current Python version
       - name: Display Python version
-        uses: test
          run:|
             import os
             paths="${{ steps.validat_test_file_exist.outputs.TEST_REPORTS }}"
